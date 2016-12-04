@@ -1,0 +1,434 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "from django.conf import settings\nfrom django.conf.urls import include, url\nfrom django.conf.urls.static import static\nfrom django.contrib import admin\n\n\nurlpatterns = [\n    # Examples:\n    url(r'^$', 'newsletter.views.home', name='home'),\n    url(r'^contact/$', 'newsletter.views.home', name='contact'),\n    # url(r'^blog/', include('blog.urls')),\n	url(r'^admin/', include(admin.site.urls)),\n]\n\nif settings.DEBUG:\n 	urlpatterns += static(settings.STATIC_URL,	document_root=settings.STATIC_ROOT)\n 	urlpatterns += static(settings.STATIC_URL,	document_root=settings.MEDIA_ROOT)",
+			"file": "src/trydjango18/urls.py",
+			"file_size": 576,
+			"file_write_time": 1480838972000000,
+			"settings":
+			{
+				"buffer_size": 574,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/templates/base.html",
+			"settings":
+			{
+				"buffer_size": 1562,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/templates/navbar.html",
+			"settings":
+			{
+				"buffer_size": 2047,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/newsletter/views.py",
+			"settings":
+			{
+				"buffer_size": 1601,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/templates/home.html",
+			"settings":
+			{
+				"buffer_size": 488,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "from django import forms\nfrom .models import SignUp\n\nclass ContactForm(forms.Form):\n	full_name = forms.CharField(required=False)\n	email = forms.EmailField()\n	message = forms.CharField()\n\nclass SignUpForm(forms.ModelForm):\n	class Meta:\n		model = SignUp\n		fields = ['full_name', 'email']\n\n	def clean_email(self):\n		email = self.cleaned_data.get('email')\n		email_base, provider = email.split('@')\n		domain, extension = provider.split('.')\n		#if not domain == \"Devry\":\n			#raise forms.ValidationError(\"Please make sure you use your Devry email.\")\n		if not extension == \"edu\":\n			raise forms.ValidationError(\"Please use a valid .EDU college email address\") \n		return email	\n\n	def clean_full_name(self):\n		full_name = self.cleaned_data.get('full_name')	\n		return full_name",
+			"file": "src/newsletter/forms.py",
+			"file_size": 768,
+			"file_write_time": 1473907485000000,
+			"settings":
+			{
+				"buffer_size": 766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/templates/forms.html",
+			"settings":
+			{
+				"buffer_size": 110,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 118.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/sspangler/Desktop/trydjango18/src/newsletter/tests.py",
+		"/home/sspangler/Desktop/trydjango18/src/templates/base.html",
+		"/home/sspangler/Desktop/trydjango18/src/trydjango18/settings.py",
+		"/home/sspangler/Desktop/trydjango18/src/newsletter/__init__.py",
+		"/home/sspangler/Desktop/trydjango18/src/newsletter/forms.py",
+		"/home/sspangler/Desktop/trydjango18/src/newsletter/admin.py",
+		"/home/sspangler/Desktop/trydjango18/src/templates/home.html",
+		"/home/sspangler/Desktop/trydjango18/src/newsletter/views.py",
+		"/home/sspangler/Desktop/trydjango18/src/manage.py",
+		"/home/sspangler/Desktop/trydjango18/src/trydjango18/urls.py",
+		"/home/sspangler/Desktop/trydjango18/src/templates/javascript.html",
+		"/home/sspangler/Desktop/trydjango18/src/templates/head_css.html",
+		"/home/sspangler/Desktop/trydjango18/src/templates/navbar.html",
+		"/home/sspangler/Desktop/trydjango18/src/templates/example_fluid.html",
+		"/home/sspangler/Desktop/trydjango18/src/newsletter/models.py",
+		"/home/sspangler/Desktop/trydjango18/src/templates/forms.html",
+		"/home/sspangler/Desktop/trydjango18/src/newsletter/templates/home.html"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/trydjango18/urls.py",
+					"settings":
+					{
+						"buffer_size": 574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								349,
+								349
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/templates/base.html",
+					"settings":
+					{
+						"buffer_size": 1562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1015,
+								1015
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/templates/navbar.html",
+					"settings":
+					{
+						"buffer_size": 2047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2047,
+								2047
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/newsletter/views.py",
+					"settings":
+					{
+						"buffer_size": 1601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								196
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/templates/home.html",
+					"settings":
+					{
+						"buffer_size": 488,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								161,
+								161
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/newsletter/forms.py",
+					"settings":
+					{
+						"buffer_size": 766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/templates/forms.html",
+					"settings":
+					{
+						"buffer_size": 110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 24.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true
+}
